@@ -13,9 +13,27 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let rowData of gridData.data let i = index">
+      <tr *ngFor="let rowData of pagedItems let i = index">
         <td *ngFor="let key of gridData.keys">{{rowData[key]}}</td>
       </tr>
     </tbody>
   </table>
+  <!-- pager -->
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+        <a (click)="setPage(1)" class="page-link">First</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+        <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+    </li>
+    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+        <a (click)="setPage(page)" class="page-link">{{page}}</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+        <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+        <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+    </li>
+</ul>
 </div>

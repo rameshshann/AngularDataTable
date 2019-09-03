@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { GridComponent } from './grid/grid.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { PagerService } from './service/pager.service';
 
 @NgModule({
   declarations: [GridComponent],
@@ -12,6 +13,6 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   exports: [],
-  providers: []
+  providers: [PagerService]
 })
 export class GridModule { }
