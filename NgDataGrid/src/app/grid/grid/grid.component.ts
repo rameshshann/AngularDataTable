@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GridServiceService } from '../service/grid-service.service';
 import { PagerService } from '../service/pager.service';
+import { GridFilterPipe } from '../pipe/grid-filter.pipe';
 
 @Component({
   selector: 'grid',
@@ -14,7 +15,8 @@ export class GridComponent implements OnInit {
   private element: any = {};
   private allItems: any[];
 
-  constructor(private gridServiceService: GridServiceService, private pagerService: PagerService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private gridServiceService: GridServiceService, private pagerService: PagerService, private gridFilterPipe: GridFilterPipe) { }
 
   ngOnInit() {
     this.gridServiceService.list().subscribe(res => {
@@ -26,7 +28,7 @@ export class GridComponent implements OnInit {
 
   }
   setPage(page: number) {
-    console.log(page);
+   // console.log(this.gridFilterPipe.transform(this.gridData.data, this.gridData.data[0].name='tiger', true));
     // get pager object from service
      this.pager = this.pagerService.getPager(this.gridData.data.length, page);
      //console.log(this.pager);
