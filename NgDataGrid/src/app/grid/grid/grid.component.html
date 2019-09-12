@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Basic Table</h2>
-  <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+  <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox" (keyup)="globalSearch();">
 <p></p>
   <table class="table">
     <thead>
@@ -15,7 +15,7 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let rowData of pagedItems | gridFilter: {name: searchText, position:searchText,  place: searchText};let i = index">
+      <tr *ngFor="let rowData of pagedItems">
         <td *ngFor="let key of gridData.keys">{{rowData[key]}}</td>
       </tr>
     </tbody>

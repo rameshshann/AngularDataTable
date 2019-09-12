@@ -133,6 +133,76 @@
           }
         }
       }
+    },
+    "AngularDataGrid": {
+      "root": "projects/angular-data-grid",
+      "sourceRoot": "projects/angular-data-grid/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-data-grid/tsconfig.lib.json",
+            "project": "projects/angular-data-grid/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-data-grid/src/test.ts",
+            "tsConfig": "projects/angular-data-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-data-grid/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-data-grid/tsconfig.lib.json",
+              "projects/angular-data-grid/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "NgxGrid": {
+      "root": "projects/ngx-grid",
+      "sourceRoot": "projects/ngx-grid/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-grid/tsconfig.lib.json",
+            "project": "projects/ngx-grid/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-grid/src/test.ts",
+            "tsConfig": "projects/ngx-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-grid/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-grid/tsconfig.lib.json",
+              "projects/ngx-grid/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "NgDataGrid"

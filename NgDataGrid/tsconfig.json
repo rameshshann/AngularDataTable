@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-data-grid": [
+        "dist/angular-data-grid"
+      ],
+      "angular-data-grid/*": [
+        "dist/angular-data-grid/*"
+      ],
+      "ngx-grid": [
+        "dist/ngx-grid"
+      ],
+      "ngx-grid/*": [
+        "dist/ngx-grid/*"
+      ]
+    }
   }
 }
