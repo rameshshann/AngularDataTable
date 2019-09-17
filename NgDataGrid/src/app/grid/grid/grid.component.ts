@@ -10,11 +10,13 @@ import { GridFilterPipe } from '../pipe/grid-filter.pipe';
 })
 export class GridComponent implements OnInit {
   public gridData: any = [];
+  public header: any = [];
   public pager: any = {};
   public pagedItems: any[];
   private element: any = {};
   private allItems: any[];
   public searchText: any = '';
+  public headerName: any = '';
 
   // tslint:disable-next-line:max-line-length
   constructor(private gridServiceService: GridServiceService, private pagerService: PagerService, private gridFilterPipe: GridFilterPipe) { }
@@ -22,14 +24,16 @@ export class GridComponent implements OnInit {
   ngOnInit() {
     this.gridServiceService.list().subscribe(res => {
       res.keys = Object.keys(res.data[0]);
+      this.header =  Object.keys(res.data[0]);
       this.gridData = res;
-      // this.allItems = this.gridData;
       this.setPage(1, this.gridData.data);
     });
-
   }
   setPage(page: number, gridData) {
-    // get pager object from service
+    // get pager object from service.
+    if (gridData === undefined) {
+      gridData = this.gridData.data;
+    }
     this.pager = this.pagerService.getPager(gridData.length, page);
     //console.log(this.searchByName('Tiger', this.gridData.data));
 
@@ -45,4 +49,18 @@ export class GridComponent implements OnInit {
     const searchData = this.gridFilterPipe.transform(this.gridData.data, data, false);
     this.setPage(1, searchData);
   }
+  sorting(event,key) {
+    this.headerName = key;
+    this.setPage(1, this.gridData.data.sort(this.GetSortOrder(key)));
+  }
+  GetSortOrder(prop) {
+    return function(a, b) {
+       if ( a[prop] > b[prop]) {
+           return 1;
+       } else if ( a[prop] < b[prop] ) {
+           return -1;
+       }
+       return 0;
+   };
+ }
 }

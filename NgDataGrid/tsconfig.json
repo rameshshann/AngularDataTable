@@ -30,6 +30,12 @@
       ],
       "ngx-grid/*": [
         "dist/ngx-grid/*"
+      ],
+      "awesome-grid": [
+        "dist/awesome-grid"
+      ],
+      "awesome-grid/*": [
+        "dist/awesome-grid/*"
       ]
     }
   }

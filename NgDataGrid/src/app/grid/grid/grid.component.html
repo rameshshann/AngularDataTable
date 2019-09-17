@@ -5,12 +5,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Extn.</th>
-        <th>Start Date</th>
-        <th>Salary</th>
+        <th *ngFor="let key of header" (click)="sorting($event,key);">{{key}}
+          <i *ngIf="headerName === key" class="fa fa-arrow-up" aria-hidden="true" style="float: right;"></i></th>
       </tr>
     </thead>
     <tbody>
