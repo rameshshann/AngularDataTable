@@ -5,14 +5,17 @@
   <table class="table">
     <thead>
       <tr>
-        <th *ngFor="let key of header" (click)="sorting($event,key);">{{key}}
-          <i *ngIf="headerName === key" class="fa fa-arrow-up" aria-hidden="true" style="float: right;"></i></th>
+        <th *ngFor="let key of header;index as i;" (click)="sorting(key, i);">{{key.name}}
+          <i *ngIf="gridData.sorting && key.sort == 'default'" class="fa fa-sort" aria-hidden="true" style="float: right;color: #00000054;"></i>
+          <i *ngIf="headerName === key && key.sort == 'asc'" class="fa fa-sort-asc" aria-hidden="true" style="float: right;"></i>
+          <i *ngIf="headerName === key && key.sort == 'dsc'" class="fa fa-sort-desc" aria-hidden="true" style="float: right;"></i>
+        </th>
       </tr>
     </thead>
     <tbody>
 
       <tr *ngFor="let rowData of pagedItems">
-        <td *ngFor="let key of gridData.keys">{{rowData[key]}}</td>
+        <td *ngFor="let key of header">{{rowData[key.name]}}</td>
       </tr>
     </tbody>
   </table>

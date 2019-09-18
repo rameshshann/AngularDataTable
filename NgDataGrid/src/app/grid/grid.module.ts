@@ -17,7 +17,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FormsModule,
     AngularFontAwesomeModule
   ],
-  exports: [],
+  exports: [GridComponent],
   providers: [PagerService, GridFilterPipe]
 })
 export class GridModule { }

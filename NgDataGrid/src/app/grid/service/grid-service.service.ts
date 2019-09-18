@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GridServiceService {
+export class GridService {
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<any> {
-    return this.http.get('../../../assets/json/employee.json');
+  list(path: any): Observable<any> {
+    return this.http.get(path);
 }
 }
