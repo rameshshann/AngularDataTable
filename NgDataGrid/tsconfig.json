@@ -36,6 +36,12 @@
       ],
       "awesome-grid/*": [
         "dist/awesome-grid/*"
+      ],
+      "ng-grid": [
+        "dist/ng-grid"
+      ],
+      "ng-grid/*": [
+        "dist/ng-grid/*"
       ]
     }
   }
