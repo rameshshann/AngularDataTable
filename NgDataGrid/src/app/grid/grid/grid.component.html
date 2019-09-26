@@ -1,21 +1,27 @@
-<div class="container">
-  <h2>Basic Table</h2>
+<div>
+  <span *ngIf="this.gridData.pages !== undefined">
+      show <select #showPgs [(ngModel)] = pages (click)="changesPages(showPgs.value);">
+          <option *ngFor="let item of this.gridData.pages" value= {{item}}>{{item}}</option>
+        </select>
+      </span>
   <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox" (keyup)="globalSearch();">
 <p></p>
-  <table class="table">
-    <thead>
+  <table class="table table-striped table-{{gridData.theme}}">
+    <thead class="thead-dark">
       <tr>
         <th *ngFor="let key of header;index as i;" (click)="sorting(key, i);">{{key.name}}
-          <i *ngIf="gridData.sorting && key.sort == 'default'" class="fa fa-sort" aria-hidden="true" style="float: right;color: #00000054;"></i>
+          <i *ngIf="gridData.sorting && key.sort == 'default'" class="fa fa-sort" aria-hidden="true" style="float: right;"></i>
           <i *ngIf="headerName === key && key.sort == 'asc'" class="fa fa-sort-asc" aria-hidden="true" style="float: right;"></i>
           <i *ngIf="headerName === key && key.sort == 'dsc'" class="fa fa-sort-desc" aria-hidden="true" style="float: right;"></i>
         </th>
       </tr>
     </thead>
     <tbody>
-
-      <tr *ngFor="let rowData of pagedItems">
-        <td *ngFor="let key of header">{{rowData[key.name]}}</td>
+      <tr *ngFor="let rowData of pagedItems; index as i;" class="awesomeRow" [style.background-color]="rowClicked === i ? '#dee2e6' : ''" (click)="rowClickFn(i, rowData, $event);">
+        <td *ngFor="let key of header">{{rowData[key.value]}}</td>
+      </tr>
+      <tr style="text-align: center;">
+        <td *ngIf="pagedItems.length == 0" [attr.colspan]="header.length">No data available in table</td>
       </tr>
     </tbody>
   </table>

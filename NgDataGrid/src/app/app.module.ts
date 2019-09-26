@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
-
+import { NgAwesomeGridModule } from 'ng-awesome-grid';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { GridModule } from './grid/grid.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GridModule
+    GridModule,
+    NgAwesomeGridModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

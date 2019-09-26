@@ -134,138 +134,33 @@
         }
       }
     },
-    "AngularDataGrid": {
-      "root": "projects/angular-data-grid",
-      "sourceRoot": "projects/angular-data-grid/src",
+    "ngAwesomeGrid": {
+      "root": "projects/ng-awesome-grid",
+      "sourceRoot": "projects/ng-awesome-grid/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/angular-data-grid/tsconfig.lib.json",
-            "project": "projects/angular-data-grid/ng-package.json"
+            "tsConfig": "projects/ng-awesome-grid/tsconfig.lib.json",
+            "project": "projects/ng-awesome-grid/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular-data-grid/src/test.ts",
-            "tsConfig": "projects/angular-data-grid/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-data-grid/karma.conf.js"
+            "main": "projects/ng-awesome-grid/src/test.ts",
+            "tsConfig": "projects/ng-awesome-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-awesome-grid/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/angular-data-grid/tsconfig.lib.json",
-              "projects/angular-data-grid/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "NgxGrid": {
-      "root": "projects/ngx-grid",
-      "sourceRoot": "projects/ngx-grid/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ngx-grid/tsconfig.lib.json",
-            "project": "projects/ngx-grid/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-grid/src/test.ts",
-            "tsConfig": "projects/ngx-grid/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-grid/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-grid/tsconfig.lib.json",
-              "projects/ngx-grid/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "AwesomeGrid": {
-      "root": "projects/awesome-grid",
-      "sourceRoot": "projects/awesome-grid/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/awesome-grid/tsconfig.lib.json",
-            "project": "projects/awesome-grid/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/awesome-grid/src/test.ts",
-            "tsConfig": "projects/awesome-grid/tsconfig.spec.json",
-            "karmaConfig": "projects/awesome-grid/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/awesome-grid/tsconfig.lib.json",
-              "projects/awesome-grid/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngGrid": {
-      "root": "projects/ng-grid",
-      "sourceRoot": "projects/ng-grid/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ng-grid/tsconfig.lib.json",
-            "project": "projects/ng-grid/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-grid/src/test.ts",
-            "tsConfig": "projects/ng-grid/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-grid/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-grid/tsconfig.lib.json",
-              "projects/ng-grid/tsconfig.spec.json"
+              "projects/ng-awesome-grid/tsconfig.lib.json",
+              "projects/ng-awesome-grid/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

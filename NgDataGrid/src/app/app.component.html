@@ -1,1 +1,6 @@
-<ng-awesome-grid [gridData]="sampleData"></ng-awesome-grid>
+<!-- <button type="button" (click)="changeData();">change Data</button> -->
+<ng-grid [gridData]="sampleData" [rowData]="tableData" [tableHeader]="header" (rowEvent)="customEvent($event);"></ng-grid>
+<div class="container">
+  <ng-awesome-grid [gridData]="sampleData" [rowData]="tableData" [tableHeader]="header" (rowEvent)="customEvent($event);"></ng-awesome-grid>
+</div>
+

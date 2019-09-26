@@ -19,29 +19,18 @@
       "dom"
     ],
     "paths": {
-      "angular-data-grid": [
-        "dist/angular-data-grid"
+      "ng-awesome-grid": [
+        "dist/ng-awesome-grid",
+        "dist/ng-awesome-grid"
       ],
-      "angular-data-grid/*": [
-        "dist/angular-data-grid/*"
+      "data-grid": [
+        "dist/data-grid"
       ],
-      "ngx-grid": [
-        "dist/ngx-grid"
+      "data-grid/*": [
+        "dist/data-grid/*"
       ],
-      "ngx-grid/*": [
-        "dist/ngx-grid/*"
-      ],
-      "awesome-grid": [
-        "dist/awesome-grid"
-      ],
-      "awesome-grid/*": [
-        "dist/awesome-grid/*"
-      ],
-      "ng-grid": [
-        "dist/ng-grid"
-      ],
-      "ng-grid/*": [
-        "dist/ng-grid/*"
+      "ng-awesome-grid/*": [
+        "dist/ng-awesome-grid/*"
       ]
     }
   }

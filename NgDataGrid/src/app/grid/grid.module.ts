@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { PagerService } from './service/pager.service';
 import { GridFilterPipe } from './pipe/grid-filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [GridComponent, GridFilterPipe],
@@ -14,8 +14,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    AngularFontAwesomeModule
+    FormsModule
   ],
   exports: [GridComponent],
   providers: [PagerService, GridFilterPipe]
